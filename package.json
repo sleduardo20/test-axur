@@ -10,10 +10,7 @@
     "test": "jest",
     "testcommit": "yarn jest --findRelatedTests ./src/**/* --bail",
     "generator": " yarn plop --plopfile ./generators/plopfile.js",
-    "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./public",
-    "build-storybook": "build-storybook --no-dll"
-  
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "build": "^0.1.4",
@@ -30,10 +27,6 @@
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-typescript": "^7.13.0",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/react": "^6.2.9",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.5",
     "@types/jest": "^26.0.23",
