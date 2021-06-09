@@ -7,6 +7,7 @@ export default {
     darkGray: '#969696',
     white: '#FFFFFF',
     black: '#222222',
+    green: '#4aa96c',
   },
   spacings: {
     xxlg: '4.8rem',
