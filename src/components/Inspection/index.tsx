@@ -26,7 +26,6 @@ export const Inspection = ({ id, nameInspection }: InspectionProps) => {
         </Link>
 
         <Button
-          type="button"
           size="small"
           color="ternary"
           onClick={() => deleteInspections(id)}

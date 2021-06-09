@@ -24,10 +24,6 @@ export const InpectionsProvider = ({ children }: InspectionProviderProps) => {
   const [loading, setLoading] = useState(false);
 
   const createInspections = async (keyword: string) => {
-    if (keyword === '') {
-      alert('Digite alguma coisa cara!!');
-    }
-
     setLoading(true);
 
     const response = await api.post('/', { keyword });
