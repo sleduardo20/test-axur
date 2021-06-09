@@ -8,6 +8,7 @@ type InspectionProps = {
 
 type ContextDataProps = {
   createInspections: (value: string) => Promise<void>;
+  deleteInspections: (value: string) => void;
   inspections: InspectionProps[];
   loading: boolean;
 };
@@ -28,6 +29,7 @@ export const InpectionsProvider = ({ children }: InspectionProviderProps) => {
     }
 
     setLoading(true);
+
     const response = await api.post('/', { keyword });
 
     const newInspection = {
@@ -39,10 +41,19 @@ export const InpectionsProvider = ({ children }: InspectionProviderProps) => {
     setLoading(false);
   };
 
+  const deleteInspections = (id: string) => {
+    const newInspections = inspections.filter(
+      inspection => inspection.idInspection !== id,
+    );
+
+    setInspections(newInspections);
+  };
+
   return (
     <InspectionContext.Provider
       value={{
         createInspections,
+        deleteInspections,
         inspections,
         loading,
       }}
