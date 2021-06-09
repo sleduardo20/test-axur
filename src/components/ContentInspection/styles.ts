@@ -1,4 +1,7 @@
 import styled, { css } from 'styled-components';
+import { ContentInspectionProps } from '.';
+
+type TitleProps = Pick<ContentInspectionProps, 'status'>;
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -6,16 +9,29 @@ export const Container = styled.div`
   `}
 `;
 
-export const Title = styled.div`
-  ${({ theme }) => css`
+export const Title = styled.div<TitleProps>`
+  ${({ theme, status }) => css`
     width: 100%;
     margin-top: ${theme.spacings.xxlg};
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.sm};
+
+    & strong :nth-child(2) {
+      span {
+        color: ${status === 'active'
+          ? theme.colors.green
+          : theme.colors.ternary};
+      }
+    }
+
+    span {
+      text-transform: uppercase;
+    }
   `}
 `;
+
 export const ListLinks = styled.div`
   ${({ theme }) => css`
     border-radius: 0.4rem;
