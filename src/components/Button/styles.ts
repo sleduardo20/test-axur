@@ -10,6 +10,9 @@ const modifiers = {
   secondary: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.secondary};
   `,
+  ternary: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.ternary};
+  `,
   normal: () => css`
     width: 20rem;
     height: 7rem;
