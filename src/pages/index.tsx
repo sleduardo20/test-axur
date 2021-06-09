@@ -1,7 +1,13 @@
-import { Main } from 'components/Main';
+import { ContentIndex } from 'components/ContentIndex';
+import { Header } from 'components/Header';
 
-const Home: React.FC = () => {
-  return <Main />;
+const Home = () => {
+  return (
+    <>
+      <Header />
+      <ContentIndex />
+    </>
+  );
 };
 
 export default Home;
