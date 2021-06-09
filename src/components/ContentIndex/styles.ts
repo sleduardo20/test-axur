@@ -3,13 +3,6 @@ import media from 'styled-media-query';
 
 export const Container = styled.main`
   ${({ theme }) => css`
-    max-width: 90rem;
-    padding: ${theme.spacings.sm};
-    margin: 16rem auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
     h3 {
       color: ${theme.colors.secondary};
       font-size: ${theme.font.size.md};

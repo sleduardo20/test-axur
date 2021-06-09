@@ -1,25 +1,49 @@
+import { SubmitHandler, useForm } from 'react-hook-form';
+
 import { Button } from 'components/Button';
 import { Input } from 'components/Input';
-import { Solicitation } from 'components/Solicitation';
+import { Inspection } from 'components/Inspection';
+import { Wrapper } from 'components/Wrapper';
+import { Loader } from 'components/Loader';
+
+import { useInspections } from '../../hooks/useInspections';
+
 import * as S from './styles';
 
+type FormData = {
+  keyword: string;
+};
+
 export const ContentIndex = () => {
+  const { register, handleSubmit } = useForm();
+
+  const { createInspections, inspections, loading } = useInspections();
+
+  const handleCreateInspection: SubmitHandler<FormData> = async values => {
+    createInspections(values.keyword);
+  };
+
   return (
-    <S.Container>
-      <form action="#">
-        <Input name="search" placeholder="Digite sua solicitação..." />
-        <Button color="secondary" type="submit">
-          Cadastrar
-        </Button>
-      </form>
+    <Wrapper>
+      <S.Container>
+        <form onSubmit={handleSubmit(handleCreateInspection)}>
+          <Input
+            placeholder="Digite sua solicitação..."
+            {...register('keyword')}
+          />
+          <Button color="secondary" type="submit">
+            {loading ? <Loader /> : 'Cadastrar'}
+          </Button>
+        </form>
 
-      <h3>Listagem de Solicitações:</h3>
+        <h3>Listagem de Inspeções:</h3>
 
-      <ul>
-        <Solicitation />
-        <Solicitation />
-        <Solicitation />
-      </ul>
-    </S.Container>
+        <ul>
+          {inspections.map(inspection => (
+            <Inspection key={inspection.id} {...inspection} />
+          ))}
+        </ul>
+      </S.Container>
+    </Wrapper>
   );
 };
