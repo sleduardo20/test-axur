@@ -24,3 +24,10 @@ export const Container = styled.li`
     }
   `}
 `;
+
+export const GroupButtons = styled.div`
+  width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
