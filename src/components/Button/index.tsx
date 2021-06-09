@@ -3,7 +3,7 @@ import * as S from './styles';
 
 export type ButtonProps = {
   children: React.ReactNode;
-  size?: 'normal' | 'small';
+  size?: 'normal' | 'medium' | 'small';
   color?: 'primary' | 'secondary';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 

@@ -14,8 +14,12 @@ const modifiers = {
     width: 20rem;
     height: 7rem;
   `,
-  small: () => css`
+  medium: () => css`
     width: 12rem;
+    height: 4rem;
+  `,
+  small: () => css`
+    width: 6rem;
     height: 4rem;
   `,
 };
@@ -24,11 +28,15 @@ export const Container = styled.button<ContainerProps>`
   ${({ theme, color, size }) => css`
     border-radius: 0.4rem;
     font-size: ${theme.font.size.sm};
+    padding: ${theme.spacings.sm} ${theme.spacings.md};
     font-weight: 700;
     text-transform: uppercase;
     color: ${theme.colors.white};
     border: none;
     transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     ${color && modifiers[color](theme)};
     ${size && modifiers[size]};
