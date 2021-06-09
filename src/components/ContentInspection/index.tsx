@@ -21,6 +21,10 @@ export const ContentInspeciton = ({
 }: ContentInspectionProps) => {
   const { inspections } = useInspections();
 
+  const inspection = inspections.filter(
+    ({ idInspection }) => idInspection === id,
+  );
+
   return (
     <Wrapper>
       <S.Container>
@@ -32,27 +36,33 @@ export const ContentInspeciton = ({
           </a>
         </Link>
 
-        <S.Title>
+        <S.Title status={status}>
           <strong>
-            Nome: <span>{id}</span>
+            Nome da Inspeção: <span>{inspection[0]?.nameInspection}</span>
           </strong>
           <strong>
             Status: <span>{status}</span>
           </strong>
         </S.Title>
 
-        <S.ListLinks>
-          <strong>Links encontrados:</strong>
-          <ul>
-            {urls.map(link => (
-              <li key={link}>
-                <Link href={link}>
-                  <a target="_blank">{link}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </S.ListLinks>
+        {urls?.length > 0 ? (
+          <S.ListLinks>
+            <strong>Links encontrados:</strong>
+            <ul>
+              {urls.map(link => (
+                <li key={link}>
+                  <Link href={link}>
+                    <a target="_blank">{link}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </S.ListLinks>
+        ) : (
+          <S.ListLinks>
+            <span>Nenhum Link encontrado</span>
+          </S.ListLinks>
+        )}
       </S.Container>
     </Wrapper>
   );
