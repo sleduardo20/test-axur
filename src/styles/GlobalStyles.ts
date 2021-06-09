@@ -15,7 +15,12 @@ export default createGlobalStyle`
     height: 100%;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   body{
     font-family: 'Roboto';
+    background: ${({ theme }) => theme.colors.gray};
   }
 `;
