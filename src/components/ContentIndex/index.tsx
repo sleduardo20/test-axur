@@ -27,20 +27,21 @@ export const ContentIndex = () => {
     <Wrapper>
       <S.Container>
         <form onSubmit={handleSubmit(handleCreateInspection)}>
-          <Input
-            placeholder="Digite sua solicitação..."
-            {...register('keyword')}
-          />
+          <Input placeholder="Nome da inspeção..." {...register('keyword')} />
           <Button color="secondary" type="submit">
             {loading ? <Loader /> : 'Cadastrar'}
           </Button>
         </form>
 
-        <h3>Listagem de Inspeções:</h3>
+        {inspections.length > 0 && <h3>Listagem de Inspeções:</h3>}
 
         <ul>
           {inspections.map(inspection => (
-            <Inspection key={inspection.id} {...inspection} />
+            <Inspection
+              key={inspection.idInspection}
+              id={inspection.idInspection}
+              nameInspection={inspection.nameInspection}
+            />
           ))}
         </ul>
       </S.Container>
