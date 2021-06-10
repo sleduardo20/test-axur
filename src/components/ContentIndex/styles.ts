@@ -3,11 +3,7 @@ import media from 'styled-media-query';
 
 export const Container = styled.main`
   ${({ theme }) => css`
-    h2 {
-      color: ${theme.colors.darkGray};
-      font-size: ${theme.font.size.md};
-      margin-bottom: ${theme.spacings.xs};
-    }
+    align-content: center;
     h3 {
       color: ${theme.colors.secondary};
       font-size: ${theme.font.size.md};
@@ -26,18 +22,14 @@ export const Container = styled.main`
 
     form {
       width: 100%;
-      height: 12rem;
-      padding: ${theme.spacings.sm};
       display: flex;
       margin: 0 auto;
       align-items: center;
-      justify-content: space-between;
-      border: 1px solid ${theme.colors.darkGray};
-      border-radius: 0.4rem;
+      justify-content: center;
 
-      ${media.lessThan('medium')`
-        flex-direction: column;
-      `}
+      button {
+        z-index: 10;
+      }
     }
   `}
 `;

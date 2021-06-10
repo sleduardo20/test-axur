@@ -34,6 +34,7 @@ export const Title = styled.div<TitleProps>`
 
 export const ListLinks = styled.div`
   ${({ theme }) => css`
+    width: 100%;
     border-radius: 0.4rem;
     background: ${theme.colors.white};
     padding: ${theme.spacings.sm};
@@ -47,6 +48,9 @@ export const ListLinks = styled.div`
       list-style: none;
       padding-bottom: ${theme.spacings.lg};
       border-bottom: 1px solid ${theme.colors.secondary};
+      a {
+        word-wrap: break-word;
+      }
     }
 
     li + li {

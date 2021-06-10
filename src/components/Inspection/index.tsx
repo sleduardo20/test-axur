@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { FiTrash } from 'react-icons/fi';
+import { FiList } from 'react-icons/fi';
+import { MdDelete } from 'react-icons/md';
 
 import { Button } from 'components/Button';
 import { useInspections } from 'hooks/useInspections';
@@ -21,17 +22,17 @@ export const Inspection = ({ id, nameInspection }: InspectionProps) => {
       <S.GroupButtons>
         <Link href={`inspection/${id}`}>
           <a>
-            <Button size="medium">Consultar</Button>
+            <Button size="small">
+              <FiList size={24} />
+            </Button>
           </a>
         </Link>
 
-        <Button
-          size="small"
-          color="ternary"
+        <MdDelete
+          size={24}
           onClick={() => deleteInspections(id)}
-        >
-          <FiTrash size={24} />
-        </Button>
+          color="#C92828"
+        />
       </S.GroupButtons>
     </S.Container>
   );

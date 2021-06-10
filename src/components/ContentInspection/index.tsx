@@ -30,7 +30,7 @@ export const ContentInspeciton = ({
       <S.Container>
         <Link href="/">
           <a>
-            <Button color="secondary" size="small">
+            <Button color="secondary" size="medium">
               <FiArrowLeft size={24} />
             </Button>
           </a>

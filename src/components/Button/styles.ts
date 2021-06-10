@@ -14,22 +14,22 @@ const modifiers = {
     background-color: ${theme.colors.ternary};
   `,
   normal: () => css`
-    width: 20rem;
-    height: 7rem;
+    width: 10rem;
+    height: 10rem;
   `,
   medium: () => css`
-    width: 12rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
   `,
   small: () => css`
-    width: 6rem;
-    height: 4rem;
+    width: 4.6rem;
+    height: 4.6rem;
   `,
 };
 
 export const Container = styled.button<ContainerProps>`
   ${({ theme, color, size }) => css`
-    border-radius: 0.4rem;
+    border-radius: 50%;
     font-size: ${theme.font.size.sm};
     padding: ${theme.spacings.sm} ${theme.spacings.md};
     font-weight: 700;

@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { FiPlus } from 'react-icons/fi';
 
 import { Button } from 'components/Button';
 import { Input } from 'components/Input';
@@ -35,11 +36,10 @@ export const ContentIndex = () => {
   return (
     <Wrapper>
       <S.Container>
-        <h2>Cadastro de Inspeções</h2>
         <form onSubmit={handleSubmit(handleCreateInspection)}>
           <S.Field>
             <Input
-              placeholder="Nome da inspeção..."
+              placeholder="adicionar inspeção..."
               {...register('name', {
                 required: { value: true, message: 'Digite um algum nome.' },
                 minLength: { value: 4, message: 'No mínimo 4 caracteres.' },
@@ -54,8 +54,8 @@ export const ContentIndex = () => {
             )}
           </S.Field>
 
-          <Button color="secondary" type="submit">
-            {loading ? <Loader /> : 'Cadastrar'}
+          <Button color="secondary" type="submit" size="medium">
+            <FiPlus size={24} />
           </Button>
         </form>
 
@@ -75,6 +75,7 @@ export const ContentIndex = () => {
           </>
         )}
       </S.Container>
+      {loading && <Loader />}
     </Wrapper>
   );
 };

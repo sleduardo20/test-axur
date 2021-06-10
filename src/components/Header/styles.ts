@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.header`
   ${({ theme }) => css`
@@ -15,6 +16,10 @@ export const Container = styled.header`
       margin-top: ${theme.spacings.xs};
       color: ${theme.colors.secondary};
       text-align: center;
+
+      ${media.lessThan('medium')`
+        display: none;
+      `}
     }
   `}
 `;
