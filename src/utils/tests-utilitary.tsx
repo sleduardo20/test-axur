@@ -4,13 +4,31 @@ import { render, RenderOptions } from '@testing-library/react';
 import theme from 'styles/theme';
 
 import { ReactElement } from 'react';
+import {
+  ContextDataProps,
+  defaultValuesContextData,
+  InspectionContext,
+} from 'hooks/useInspections';
 
-type CustomRenderProps = Omit<RenderOptions, 'queries'>;
+type CustomRenderProps = {
+  inspectionsProviderProps?: ContextDataProps;
+} & Omit<RenderOptions, 'queries'>;
 
 const renderCustum = (
   ui: ReactElement,
-  { ...renderOptions }: CustomRenderProps = {},
-) => render(<ThemeProvider theme={theme}>{ui}</ThemeProvider>, renderOptions);
+  {
+    inspectionsProviderProps = defaultValuesContextData,
+    ...renderOptions
+  }: CustomRenderProps = {},
+) =>
+  render(
+    <ThemeProvider theme={theme}>
+      <InspectionContext.Provider value={inspectionsProviderProps}>
+        {ui}
+      </InspectionContext.Provider>
+    </ThemeProvider>,
+    renderOptions,
+  );
 
 export * from '@testing-library/react';
 
