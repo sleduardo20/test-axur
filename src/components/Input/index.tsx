@@ -6,7 +6,7 @@ export type InputProps = {
   icon?: React.ReactNode;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Input: React.ForwardRefRenderFunction<T, InputProps> = (
+const Input: React.ForwardRefRenderFunction<any, InputProps> = (
   { name, icon, ...rest },
   ref,
 ) => {
