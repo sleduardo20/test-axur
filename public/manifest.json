@@ -1,16 +1,16 @@
 {
   "name": "Test Desafio Desenvolvedor Front End Axur",
-  "short_name": "React Avançado",
+  "short_name": "Test Front End",
   "icons": [
     {
       "src": "/img/icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "110x64"
     },
     {
       "src": "/img/icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "55x32"
     }
   ],
   "background_color": "#06092B",
