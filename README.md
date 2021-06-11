@@ -1,14 +1,9 @@
-# Projeto criado como padrão para aplicações ReactJS utilizando o framework NEX.JS
+## Instalação
 
-Este projeto padrão contêm todas as bibliotecas necessárias e configuradas para
-podermos desenvolver aplicações com NEXT.JS contendo, histoiras dos componentes, testes automatizados, código indentado com eslint e prettier, e controle de commits caso o código não esteja validado nos testes.
-
-## Começando
-
-Siga as seguintes etapas:
+Siga as seguintes etapas no seu prompt de comando:
 
 ```
-git clone https://github.com/sleduardo20/model-boilerplate-NEXJS.git
+git clone git@github.com:sleduardo20/test-axur.git
 ```
 ```
 npm install
@@ -21,13 +16,36 @@ npm run dev
 # ou
 yarn dev
 ```
+
+## Testes
+```
+npm run test
+# ou
+yarn test
+```
+
+## Produção
+```
+npm run build
+# ou
+yarn build
+```
+
+```
+npm run start
+# ou
+yarn start
+```
+
 ## Tecnologias Utilizadas
 
-- [Next.js](https://nextjs.org/docs) 
+- [Next.js](https://nextjs.org/docs)
+- [Reactjs](https://reactjs.org/docs/getting-started.html)
+- [Typescript](https://www.typescriptlang.org/docs/)
+- [Styled Media Query](https://github.com/morajabi/styled-media-query)
 - [Styled-Components](https://styled-components.com/docs) 
-- [Storybook](https://storybook.js.org/docs/react/get-started/introduction)
 - [Jest](https://jestjs.io/docs/en/getting-started.html)
 - [React Testing Libary](https://testing-library.com/docs/react-testing-library/intro)
-- [Git hooks husky](https://github.com/typicode/husky)
+
 
 
