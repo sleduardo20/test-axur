@@ -29,6 +29,7 @@ export const Inspection = ({ id, nameInspection }: InspectionProps) => {
         </Link>
 
         <MdDelete
+          aria-label="icon-delete"
           size={24}
           onClick={() => deleteInspections(id)}
           color="#C92828"

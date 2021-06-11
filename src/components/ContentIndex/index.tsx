@@ -2,7 +2,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { FiPlus } from 'react-icons/fi';
 
 import { Button } from 'components/Button';
-import { Input } from 'components/Input';
+import Input from 'components/Input';
 import { Inspection } from 'components/Inspection';
 import { Wrapper } from 'components/Wrapper';
 import { Loader } from 'components/Loader';
@@ -54,12 +54,18 @@ export const ContentIndex = () => {
             )}
           </S.Field>
 
-          <Button color="secondary" type="submit" size="medium">
+          <Button
+            color="secondary"
+            type="submit"
+            size="medium"
+            name="add inpection"
+            aria-label="add inpection"
+          >
             <FiPlus size={24} />
           </Button>
         </form>
 
-        {inspections.length > 0 && (
+        {inspections?.length > 0 && (
           <>
             <h3>Listagem de Inspeções:</h3>
 
@@ -75,7 +81,7 @@ export const ContentIndex = () => {
           </>
         )}
       </S.Container>
-      {loading && <Loader />}
+      {loading && <Loader aria-label="loading" />}
     </Wrapper>
   );
 };

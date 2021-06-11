@@ -2,7 +2,7 @@ import * as S from './styles';
 
 export const Loader = () => {
   return (
-    <S.Eclipce>
+    <S.Eclipce aria-label="loading">
       <div />
       <div />
       <div />
