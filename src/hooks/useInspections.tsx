@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+
 import { api } from 'services/api';
 
 type InspectionProps = {
@@ -6,18 +7,30 @@ type InspectionProps = {
   nameInspection: string;
 };
 
-type ContextDataProps = {
-  createInspections: (value: string) => Promise<void>;
+export type ContextDataProps = {
+  createInspections: (value: string) => void;
   deleteInspections: (value: string) => void;
   inspections: InspectionProps[];
   loading: boolean;
 };
 
-type InspectionProviderProps = {
+export type InspectionProviderProps = {
   children: React.ReactNode;
 };
 
-const InspectionContext = createContext({} as ContextDataProps);
+export const defaultValuesContextData = {
+  createInspections: () => null,
+  deleteInspections: () => null,
+  inspections: [
+    {
+      idInspection: 'gix0DzHo',
+      nameInspection: 'windows',
+    },
+  ],
+  loading: false,
+};
+
+export const InspectionContext = createContext({} as ContextDataProps);
 
 export const InpectionsProvider = ({ children }: InspectionProviderProps) => {
   const [inspections, setInspections] = useState<InspectionProps[]>([]);
